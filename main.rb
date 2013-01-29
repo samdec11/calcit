@@ -46,13 +46,17 @@ case input
   puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
     input = gets.chomp
   when "2"
+    print "Enter your first number. "
+    number1 = gets.chomp.to_i
+    print "Enter your second number (ignore if doing a square root). "
+    number2 = gets.chomp.to_i
     print "Would you like to raise a number to a power or find the square root of a number? Type power or root "
     enter = gets.chomp
     case enter
-    when "power"
-      puts power(number1, number2).to_s
-    when "root"
-      puts square_root(number1).to_s
+      when "power"
+        puts power(number1, number2).to_s
+      when "root"
+        puts square_root(number1).to_s
     end
   puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
   input = gets.chomp
