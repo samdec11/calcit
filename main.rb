@@ -52,11 +52,11 @@ while input != "Q".downcase
   puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
     input = gets.chomp
   when "2"
-    print "Enter your first number. ".color(:red)
+    print "Enter your first number. ".color(:green)
     number1 = gets.chomp.to_i
-    print "Enter your second number (enter 0 if performing square root function). ".color(:red)
+    print "Enter your second number (enter 0 if performing square root function). ".color(:green)
     number2 = gets.chomp.to_i
-    print "Would you like to raise a number to a power or find the square root of a number? Type power or root ".color(:red)
+    print "Would you like to raise a number to a power or find the square root of a number? Type power or root ".color(:green)
     enter = gets.chomp
     case enter
       when "power"
@@ -68,4 +68,4 @@ while input != "Q".downcase
   input = gets.chomp
   end
 end
-puts "You have quit the application.".color(:green)
+puts "You have quit the application.".color(:red)
