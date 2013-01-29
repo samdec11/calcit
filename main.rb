@@ -22,7 +22,11 @@ def division(number1, number2)
   number1/number2.to_f
 end
 
-puts "What would you like to do? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit."
+def BMI(height_in_inches, weight)
+  (703 * weight) / (height_in_inches ** 2)
+end
+
+puts "What would you like to do? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit."
 input = gets.chomp
 while input != "Q"
 case input
@@ -43,7 +47,7 @@ case input
       when "divide"
         puts division(number1, number2).to_s
     end
-  puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
+  puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI Press Q to quit. "
     input = gets.chomp
   when "2"
     print "Enter your first number. "
@@ -58,8 +62,16 @@ case input
       when "root"
         puts square_root(number1).to_s
     end
-  puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
+  puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
   input = gets.chomp
+  when "3"
+    print "Enter your height in inches "
+    height = gets.chomp.to_i
+    print "Enter your weight in pounds "
+    weight = gets.chomp.to_i
+    puts BMI(height, weight).to_s
+    puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
+    input = gets.chomp
 end
 end
 puts "You have quit the application."
