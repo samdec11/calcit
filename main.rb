@@ -29,7 +29,7 @@ case input
   when "1"
     print "Enter your first number. "
     number1 = gets.chomp.to_i
-    print "Enter your second number (ignore if doing a square root). "
+    print "Enter your second number. "
     number2 = gets.chomp.to_i
     print "What would you like to do with these numbers? Enter add, subtract, multiply, or divide. "
     enter = gets.chomp
@@ -48,7 +48,7 @@ case input
   when "2"
     print "Enter your first number. "
     number1 = gets.chomp.to_i
-    print "Enter your second number (ignore if doing a square root). "
+    print "Enter your second number (enter 0 if performing square root function). "
     number2 = gets.chomp.to_i
     print "Would you like to raise a number to a power or find the square root of a number? Type power or root "
     enter = gets.chomp
