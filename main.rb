@@ -104,6 +104,8 @@ while input != "Q".downcase
     inter = gets.chomp.to_i
     puts mortgage(prince, inter, payments).to_s
     puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
+    input = gets.chomp
+
   when "5"
     print "How far are you driving? "
     distance = gets.chomp.to_i
@@ -116,6 +118,11 @@ while input != "Q".downcase
     puts calculate_trip(distance, mpg, fuel_efficiency, speed).to_s
     puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI.  Press 5 to calculate cost of road trip. Press Q to quit. "
     input = gets.chomp
+
+  else
+    puts "choose an appropriate option (1-5 or Q)"
+    input = gets.chomp
 end
+
 end
 puts "You have quit the application.".color(:red)
