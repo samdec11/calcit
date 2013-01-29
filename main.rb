@@ -73,11 +73,11 @@ while input != "Q".downcase
   input = gets.chomp
 
   when "3"
-    print "Enter your height in inches "
+    print "Enter your height in inches ".color("#483D8B")
     height = gets.chomp.to_i
-    print "Enter your weight in pounds "
+    print "Enter your weight in pounds ".color("#483D8B")
     weight = gets.chomp.to_i
-    puts BMI(height, weight).to_s
+    puts BMI(height, weight).to_s.color("#483D8B")
     puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
     input = gets.chomp
 
