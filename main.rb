@@ -39,8 +39,11 @@ def calculate_trip(distance, mpg, fuel_efficiency, speed)
   puts "Your trip will take #{distance / speed} hours and will cost #{(distance / mpg) * fuel_efficiency}"
 end
 
+def promptphrase
 puts "What would you like to do? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press 4 to calculate your monthly mortgage payments. Press 5 for a trip calculator. Press Q to quit."
+  end
 
+promptphrase
 input = gets.chomp
 while input != "Q".downcase
   case input
@@ -65,9 +68,9 @@ while input != "Q".downcase
         x = division(number1, number2)
         puts "The quotient of these numbers is #{x}.".color(:blue)
     end
-    puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
+promptphrase
+input = gets.chomp
 
-    input = gets.chomp
   when "2"
     print "Enter your first number. ".color(:green)
 
@@ -83,8 +86,8 @@ while input != "Q".downcase
         puts square_root(number1).to_s.color(:green)
     end
 
-  puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
-  input = gets.chomp
+promptphrase
+input = gets.chomp
 
   when "3"
     print "Enter your height in inches ".color("#483D8B")
@@ -103,8 +106,8 @@ while input != "Q".downcase
     print "Enter interest".color("#FFB6C1")
     inter = gets.chomp.to_i
     puts mortgage(prince, inter, payments).to_s.color("#FFB6C1")
-    puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
-    input = gets.chomp
+promptphrase
+input = gets.chomp
 
   when "5"
     print "How far are you driving? "
@@ -116,8 +119,8 @@ while input != "Q".downcase
     print "How fast will you drive? "
     speed = gets.chomp.to_i
     puts calculate_trip(distance, mpg, fuel_efficiency, speed).to_s
-    puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI.  Press 5 to calculate cost of road trip. Press Q to quit. "
-    input = gets.chomp
+promptphrase
+input = gets.chomp
 
   else
     puts "choose an appropriate option (1-5 or Q)"
