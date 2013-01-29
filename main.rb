@@ -1,3 +1,6 @@
+require 'rainbow'
+
+
 def power(base, exponent)
   base ** exponent
 end
@@ -22,9 +25,14 @@ def division(number1, number2)
   number1/number2.to_f
 end
 
-puts "What would you like to do? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit."
-input = gets.chomp
-while input != "Q"
+def mortgage(principal, interest_rate, number_of_payments)
+    principal*((interest_rate(1+interest_rate)**number_of_payments)/(( 1+interest_rate)**n)-1)
+end
+
+
+puts "What would you like to do? Press 1 for basic calculations. Press 2 for advanced calculations. Press 3 for a mortgage calculator. Press 4 to calculate your BMI. Press Q to quit."
+input = gets.chomp.downcase
+while input != "q"
 case input
   when "1"
     print "Enter your first number. "
@@ -43,8 +51,10 @@ case input
       when "divide"
         puts division(number1, number2).to_s
     end
-  puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
+    puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
     input = gets.chomp
+  end
+  end
   when "2"
     print "Enter your first number. "
     number1 = gets.chomp.to_i
@@ -58,8 +68,20 @@ case input
       when "root"
         puts square_root(number1).to_s
     end
-  puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
-  input = gets.chomp
-end
+    puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
+    input = gets.chomp
+    end
+    when "3"
+    print "Enter principal"
+    principal = gets.chomp.to_i
+    print "enter interest_rate"
+    interest_rate = gets.chomp.to_i
+    print "enter number of payments"
+    number_of_payments = gets.chomp
+    puts mortgage(principal, interest_rate, number_of_payments)
+    puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
+    input = gets.chomp
+    end
+  end
 end
 puts "You have quit the application."
