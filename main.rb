@@ -19,7 +19,7 @@ def multiplication(number1, number2)
 end
 
 def division(number1, number2)
-  number1/number2
+  number1/number2.to_f
 end
 
 puts "What would you like to do? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit."
@@ -37,9 +37,9 @@ case input
       when "add"
         puts addition(number1, number2).to_s
       when "subtract"
-        puts subtract(number1, number2).to_s
+        puts subtraction(number1, number2).to_s
       when "multiply"
-        puts multiply(number1, number2).to_s
+        puts multiplication(number1, number2).to_s
       when "divide"
         puts division(number1, number2).to_s
     end
