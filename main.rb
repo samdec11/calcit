@@ -78,9 +78,9 @@ while input != "Q".downcase
     enter = gets.chomp
     case enter
       when "power"
-        puts power(number1, number2).to_s
+        puts power(number1, number2).to_s.color(:green)
       when "root"
-        puts square_root(number1).to_s
+        puts square_root(number1).to_s.color(:green)
     end
 
   puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
@@ -96,13 +96,13 @@ while input != "Q".downcase
     input = gets.chomp
 
   when "4"
-    print "Enter principal"
+    print "Enter principal".color("#FFB6C1")
     prince = gets.chomp.to_i
-    print "Enter number of payments"
+    print "Enter number of payments".color("#FFB6C1")
     payments = gets.chomp.to_i
-    print "Enter interest"
+    print "Enter interest".color("#FFB6C1")
     inter = gets.chomp.to_i
-    puts mortgage(prince, inter, payments).to_s
+    puts mortgage(prince, inter, payments).to_s.color("#FFB6C1")
     puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
   when "5"
     print "How far are you driving? "
