@@ -27,9 +27,10 @@ def BMI(height_in_inches, weight)
 end
 
 puts "What would you like to do? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit."
+
 input = gets.chomp
-while input != "Q"
-case input
+while input != "Q".downcase
+  case input
   when "1"
     print "Enter your first number. "
     number1 = gets.chomp.to_i
@@ -39,13 +40,17 @@ case input
     enter = gets.chomp
     case enter
       when "add"
-        puts addition(number1, number2).to_s
+        x = addition(number1, number2)
+        puts "The sum of these numbers is #{x}."
       when "subtract"
-        puts subtraction(number1, number2).to_s
+        x = subtraction(number1, number2)
+        puts "The difference of these numbers is #{x}."
       when "multiply"
-        puts multiplication(number1, number2).to_s
+        x = multiplication(number1, number2)
+        puts "The product of these numbers is #{x}."
       when "divide"
-        puts division(number1, number2).to_s
+        x = division(number1, number2)
+        puts "The quotient of these numbers is #{x}."
     end
   puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI Press Q to quit. "
     input = gets.chomp
@@ -64,6 +69,7 @@ case input
     end
   puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
   input = gets.chomp
+
   when "3"
     print "Enter your height in inches "
     height = gets.chomp.to_i
@@ -72,6 +78,7 @@ case input
     puts BMI(height, weight).to_s
     puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
     input = gets.chomp
+
 end
 end
 puts "You have quit the application."
