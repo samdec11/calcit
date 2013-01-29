@@ -51,6 +51,18 @@ while input != "Q"
   when "2"
     print "Would you like to raise a number to a power or find the square root of a number? Type power or root."
   end
+  when "2"
+    print "Would you like to raise a number to a power or find the square root of a number? Type power or root "
+    enter = gets.chomp
+    case enter
+    when "power"
+      puts power(number1, number2).to_s
+    when "root"
+      puts square_root(number1).to_s
+    end
+  puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations. Press Q to quit. "
+  input = gets.chomp
+  end
 end
 puts "You have quit the application."
 
