@@ -47,28 +47,3 @@ when "2"
   print "Would you like to raise a number to a power or find the square root of a number? Type power or root."
 end
 puts "You have quit the application."
-
-def power(base, exponent)
-  base ** exponent
-end
-
-def square_root(number)
-  number ** 0.5
-end
-
-def addition(number1, number2)
-  number1 + number2
-end
-
-def subtraction(number1, number2)
-  number1 - number2
-end
-
-def multiplication(number1, number2)
-  number1*number2
-end
-
-def division(number1, number2)
-  number1/number2
-end
-
