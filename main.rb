@@ -36,7 +36,7 @@ def calculate_trip(distance, mpg, fuel_efficiency, speed)
   if speed > 60
     mpg -= (2 * (speed - 60))
   end
-  puts "Your trip will take #{distance / speed} hours and will cost #{(distance / mpg) * fuel_efficiency}"
+  puts "Your trip will take #{distance / speed} hours and will cost $#{(distance / mpg) * fuel_efficiency}".color("#FFA500")
 end
 
 def promptphrase
@@ -44,8 +44,8 @@ puts "What would you like to do? Press 1 for basic calculations. Press 2 for adv
   end
 
 promptphrase
-input = gets.chomp
-while input != "Q".downcase
+input = gets.chomp.downcase
+while input != "q"
   case input
   when "1"
     print "Enter your first number. ".color(:blue)
@@ -69,7 +69,7 @@ while input != "Q".downcase
         puts "The quotient of these numbers is #{x}.".color(:blue)
     end
 promptphrase
-input = gets.chomp
+input = gets.chomp.downcase
 
   when "2"
     print "Enter your first number. ".color(:green)
@@ -87,7 +87,7 @@ input = gets.chomp
     end
 
 promptphrase
-input = gets.chomp
+input = gets.chomp.downcase
 
   when "3"
     print "Enter your height in inches ".color("#483D8B")
@@ -99,32 +99,34 @@ input = gets.chomp
     input = gets.chomp
 
   when "4"
-    print "Enter principal".color("#FFB6C1")
+    print "Enter principal: ".color("#FFB6C1")
     prince = gets.chomp.to_i
-    print "Enter number of payments".color("#FFB6C1")
+    print "Enter number of payments: ".color("#FFB6C1")
     payments = gets.chomp.to_i
-    print "Enter interest".color("#FFB6C1")
+    print "Enter interest: ".color("#FFB6C1")
     inter = gets.chomp.to_i
     puts mortgage(prince, inter, payments).to_s.color("#FFB6C1")
 promptphrase
-input = gets.chomp
+input = gets.chomp.downcase
 
   when "5"
-    print "How far are you driving? "
+    print "How far are you driving? ".color("#FFA500")
     distance = gets.chomp.to_i
-    print "What is your MPG? "
+    print "What is your MPG? ".color("#FFA500")
     mpg = gets.chomp.to_i
-    print "How much does gas cost per gallon? "
+    print "How much does gas cost per gallon? ".color("#FFA500")
     fuel_efficiency = gets.chomp.to_i
-    print "How fast will you drive? "
+    print "How fast will you drive? ".color("#FFA500")
     speed = gets.chomp.to_i
     puts calculate_trip(distance, mpg, fuel_efficiency, speed).to_s
 promptphrase
-input = gets.chomp
+input = gets.chomp.downcase
 
   else
     puts "choose an appropriate option (1-5 or Q)"
-    input = gets.chomp
+
+promptphrase
+input = gets.chomp.downcase
 end
 
 end
