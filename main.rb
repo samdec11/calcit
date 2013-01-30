@@ -96,7 +96,7 @@ while input != "Q".downcase
     fuel_efficiency = gets.chomp.to_i
     print "How fast will you drive? "
     speed = gets.chomp.to_i
-    puts calculate_trip(distance, mpg, fuel_efficiency, speed).to_s
+    puts calculate_trip(distance, mpg, fu5el_efficiency, speed).to_s
     puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI.  Press 5 to calculate cost of road trip. Press Q to quit. "
     input = gets.chomp
 end
