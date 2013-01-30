@@ -24,6 +24,10 @@ def division(number1, number2)
   number1/number2.to_f
 end
 
+def mortgage(prince, inter, payments)
+    prince*((inter*(1+inter)**payments)/((1+inter)**payments)-1)
+end
+
 def BMI(height_in_inches, weight)
   (703 * weight) / (height_in_inches ** 2)
 end
@@ -32,13 +36,16 @@ def calculate_trip(distance, mpg, fuel_efficiency, speed)
   if speed > 60
     mpg -= (2 * (speed - 60))
   end
-  puts "Your trip will take #{distance / speed} hours and will cost #{(distance / mpg) * fuel_efficiency}"
+  puts "Your trip will take #{distance / speed} hours and will cost $#{(distance / mpg) * fuel_efficiency}".color("#FFA500")
 end
 
-puts "What would you like to do? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit."
+def promptphrase
+puts "What would you like to do? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press 4 to calculate your monthly mortgage payments. Press 5 for a trip calculator. Press Q to quit."
+  end
 
-input = gets.chomp
-while input != "Q".downcase
+promptphrase
+input = gets.chomp.downcase
+while input != "q"
   case input
   when "1"
     print "Enter your first number. ".color(:blue)
@@ -61,10 +68,12 @@ while input != "Q".downcase
         x = division(number1, number2)
         puts "The quotient of these numbers is #{x}.".color(:blue)
     end
-  puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI Press Q to quit. "
-    input = gets.chomp
+promptphrase
+input = gets.chomp.downcase
+
   when "2"
     print "Enter your first number. ".color(:green)
+
     number1 = gets.chomp.to_i
     print "Enter your second number (enter 0 if performing square root function). ".color(:green)
     number2 = gets.chomp.to_i
@@ -72,12 +81,13 @@ while input != "Q".downcase
     enter = gets.chomp
     case enter
       when "power"
-        puts power(number1, number2).to_s
+        puts power(number1, number2).to_s.color(:green)
       when "root"
-        puts square_root(number1).to_s
+        puts square_root(number1).to_s.color(:green)
     end
-  puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
-  input = gets.chomp
+
+promptphrase
+input = gets.chomp.downcase
 
   when "3"
     print "Enter your height in inches ".color("#483D8B")
@@ -87,18 +97,39 @@ while input != "Q".downcase
     puts BMI(height, weight).to_s.color("#483D8B")
     puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI. Press Q to quit. "
     input = gets.chomp
+
+  when "4"
+    print "Enter principal: ".color("#FFB6C1")
+    prince = gets.chomp.to_i
+    print "Enter number of payments: ".color("#FFB6C1")
+    payments = gets.chomp.to_i
+    print "Enter interest: ".color("#FFB6C1")
+    inter = gets.chomp.to_i
+    puts mortgage(prince, inter, payments).to_s.color("#FFB6C1")
+promptphrase
+input = gets.chomp.downcase
+
   when "5"
-    print "How far are you driving? "
+    print "How far are you driving? ".color("#FFA500")
     distance = gets.chomp.to_i
-    print "What is your MPG? "
+    print "What is your MPG? ".color("#FFA500")
     mpg = gets.chomp.to_i
-    print "How much does gas cost per gallon? "
+    print "How much does gas cost per gallon? ".color("#FFA500")
     fuel_efficiency = gets.chomp.to_i
-    print "How fast will you drive? "
+    print "How fast will you drive? ".color("#FFA500")
     speed = gets.chomp.to_i
-    puts calculate_trip(distance, mpg, fu5el_efficiency, speed).to_s
-    puts "What would you like to do next? Press 1 for basic calculations. Press 2 for advanced calculations.  Press 3 to calculate BMI.  Press 5 to calculate cost of road trip. Press Q to quit. "
-    input = gets.chomp
+
+    puts calculate_trip(distance, mpg, fuel_efficiency, speed).to_s
+
+promptphrase
+input = gets.chomp.downcase
+
+  else
+    puts "choose an appropriate option (1-5 or Q)"
+
+promptphrase
+input = gets.chomp.downcase
+
 end
 end
 puts "You have quit the application.".color(:red)
